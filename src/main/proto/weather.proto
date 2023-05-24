@@ -1,0 +1,29 @@
+syntax = "proto2";
+
+option java_multiple_files = true;
+option java_package = "com.zyc.proto";
+option java_outer_classname = "WeatherGrpcProto";
+
+package hello;
+
+service WeatherGrpc {
+    rpc getWeatherInfo (WeatherRequest) returns (WeatherReply) {}
+}
+
+message WeatherRequest {
+    optional string city = 1;
+    optional string key = 2;
+}
+
+message WeatherReply {
+    optional string province = 1;
+    optional string city = 2;
+    optional string weather = 3;
+    optional string temperature = 4;
+    optional string winddirection = 5; // 风向
+    optional string windpower = 6; // 风力
+    optional string humidity = 7;
+    optional string reporttime = 8;
+    optional string temperature_float = 9;
+    optional string humidity_float = 10;
+}

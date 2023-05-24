@@ -1,0 +1,11 @@
+syntax = "proto2";
+
+package apollo.hdmap;
+
+option java_multiple_files = true;
+option java_package = "com.zyc.proto.map_msg";
+
+// Global unique ids for all objects (include lanes, junctions, overlaps, etc).
+message Id {
+    optional string id = 1;
+}
